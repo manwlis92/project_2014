@@ -52,7 +52,7 @@
  
 
  
-  int bp_1bit(FILE *input_file)
+  void bp_1bit(FILE *input_file)
   {   
          FILE *outp1;   FILE *outp2; FILE *outp3; 
 	     
@@ -80,7 +80,7 @@
       fprintf(outp2,"1-bit branch predictor table\n\n");
       fprintf(outp2,"         Act|Pred \n");
       
-      printf("1-bit branch predictor in progress..\n"); 
+      
   	while (( ch = fgetc(input_file)) !=EOF) /*eisagogi lekseon ston  pinaka*/
   	
    {                              
@@ -258,11 +258,11 @@
      
 
       fclose(input_file); fclose(outp1); fclose(outp2); fclose(outp3);
-    printf("1-bit branch predictor done!\n"); 
-  	return sumbranches;
+   
+  	
   }
   
-    void bp_2bit(FILE *input_file2, int h)
+    void bp_2bit(FILE *input_file2)
   {   
       FILE *outp1; FILE *outp2;
 	
@@ -281,7 +281,7 @@
       fprintf(outp1,"2-bit branch predictor table\n\n");
       fprintf(outp1,"         Act|Pred \n");
      
-      printf("\n2-bit branch predictor in progress..\n"); 
+     
   	while (( ch = fgetc(input_file2)) !=EOF) /*eisagogi lekseon ston disdiastato pinaka */
    {  
               address0[r] = ch;   
@@ -294,38 +294,7 @@
 				      
 			           r=0;  
                      k1= hex_decimal(address0);   
-				           
-                    //printf("%i\n",k1-k0);
-                
-				if (k1!=-1)
-				{    
-		        if (k1 > k2 && k1>k3 &&k1 >k4)
-		          {
-		        	if (c==0) k2 =k1;
-		        	else
-		        	if (c==1) k3 =k1;
-		        	else
-		        	if (c==2) k4 =k1;
-		             	 c++;   pr++;
-		             	 
-		            			   
-			       }
-			     			  
-			      
-			   // printf("dfs %i\n",loopinbr1);
-			     if (pr==tr)
-				{
-			    	if (c==1){	 
-					             pr=0;tr=1;current_state=1;
-					            
-							 }
-				else if (c==2){	 
-					             pr=0;tr=1;current_state=1;
-							 }
-				else if (c==3){
-					        	 pr=0;tr=1;current_state=1;
-							 }
-			    } 
+				          
 			       
 			     if(k0!=0)
 				  {
@@ -395,8 +364,8 @@
 			        k0=k1;  cc=c; if (c==3) c=0;
 			        
 			         for (x=0;x<=7;x++)  fprintf(outp1,"%c", add[x]);
-		      }
-		      else wrongadd++;
+		      
+		      
 		  }
 		      
 		     
@@ -412,7 +381,7 @@
      fprintf(outp2,"  FAIL: %.0f/%.0f = %4.2f %%\n",(line_counter-hits),line_counter,100 - 100*hits/line_counter);
 
     fclose(input_file2); fclose(outp1); fclose(outp2); 
-    printf("2-bit branch predictor done!\n"); 
+    
   	
   }
 
@@ -430,10 +399,12 @@ int main()
  
    input_file = fopen(filename,"r");
   
-// printf("please wait..\n"); 
- h = bp_1bit(input_file); fclose(input_file); input_file = fopen(filename,"r");
-bp_2bit(input_file,h);
-//printf("finished! \n");
+printf("\nplease wait..\n");
+bp_1bit(input_file); fclose(input_file); input_file = fopen(filename,"r");
+printf("....\n");
+bp_2bit(input_file);
+printf("process finished!\n\n");
+
 fclose(input_file);
 system("PAUSE");
    
