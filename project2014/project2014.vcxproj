@@ -77,9 +77,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.c">
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
-    </ClCompile>
+    <ClInclude Include="..\..\..\..\Desktop\predictorsfinal\correlating.h" />
+    <ClInclude Include="..\..\..\..\Desktop\predictorsfinal\hex.h" />
+    <ClInclude Include="..\..\..\..\Desktop\predictorsfinal\one_bit.h" />
+    <ClInclude Include="..\..\..\..\Desktop\predictorsfinal\two_bit.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Desktop\predictorsfinal\main.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
