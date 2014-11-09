@@ -10,6 +10,15 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="correlating.h" />
+    <ClInclude Include="hex.h" />
+    <ClInclude Include="one_bit.h" />
+    <ClInclude Include="two_bit.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.c" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{87C7F605-FF50-44C3-B2EE-4FC57376253C}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -76,15 +85,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\Desktop\predictorsfinal\correlating.h" />
-    <ClInclude Include="..\..\..\..\Desktop\predictorsfinal\hex.h" />
-    <ClInclude Include="..\..\..\..\Desktop\predictorsfinal\one_bit.h" />
-    <ClInclude Include="..\..\..\..\Desktop\predictorsfinal\two_bit.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\Desktop\predictorsfinal\main.c" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
