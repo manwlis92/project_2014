@@ -27,6 +27,12 @@
     <ClInclude Include="two_bit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="tournament.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="yehpad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">

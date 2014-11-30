@@ -12,9 +12,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="correlating.h" />
+    <ClInclude Include="tournament.h" />
     <ClInclude Include="hex.h" />
     <ClInclude Include="one_bit.h" />
     <ClInclude Include="two_bit.h" />
+    <ClInclude Include="yehpad.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c" />
